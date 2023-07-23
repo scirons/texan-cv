@@ -1,3 +1,5 @@
+%xelatex
+
 \documentclass[a4paper]{article}
 
 \usepackage{titlesec} % Define title section
@@ -8,6 +10,9 @@
 \usepackage{hyperref} % Hyperlinks support
 \usepackage{ifthen} % Conditional commands
 \usepackage{changepage}
+\usepackage{roboto}
+\usepackage[default,opentype]{sourcesanspro}
+
 
 % Supress page number
 \pagenumbering{gobble}
@@ -16,7 +21,7 @@
 \author{Tex Titterton}
 \renewcommand{\maketitle}{
   \begin{center}
-  {\huge\bfseries\theauthor} \\ % Renders name
+    {\sourcesanspro\fontsize{32pt}{1em}\scshape\theauthor} \\ % Renders name
     (406)736-9419 |
     tex@titterton.com |
     \href{https://github.com/titterton}{titterton} |
@@ -25,10 +30,11 @@
   }
 
 
-% Custom sections and formatting
-\titleformat{\section}{\huge\bfseries}{}{0em}{}[{\titlerule[0.75pt]}]
-\titleformat{\subsection}{\bfseries\Large}{}{0em}{}
+
+  % Custom sections and formatting
+\titleformat{\section}{\roboto\fontsize{16pt}{1em}\bfseries}{}{0em}{}[{\titlerule[0.75pt]}]
 \titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{}
+\titleformat{\item}{\sourcesansprolight\fontsize{8pt}{1em}}{}{0em}{}
 
 % Define main subsections
 \newenvironment{mSubsection}[4]{
@@ -60,8 +66,8 @@
 
 \section{Experience}
 \begin{mSubsection}
-    {Thunderhoof Ranch -- TR}
-    {Bozeman, MT}
+    {Thunderhoof Ranch - TR}
+    {Austin, TX}
     {Wrangler}
     {Nov. 2018 - Present}
     \item Led cattle drives and ensured the safe transport of herds to grazing areas.
@@ -72,7 +78,7 @@
 
 \begin{mSubsection}
     {Silver Sprus Ranch - SS}
-    {Missoula, MT}
+    {Bozeman, MT}
     {Range Rider}
     {Aug. 2010 - Sep. 2018}
     \item Managed a team of wranglers and coordinated daily trail rides for guests.
@@ -132,4 +138,5 @@ C2 - Native
 {Italian}
 C1 - Advanced
 
+\today
 \end{document}
