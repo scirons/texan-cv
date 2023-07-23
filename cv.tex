@@ -6,7 +6,10 @@
 \usepackage{parskip} % Remove paragraph identation
 \usepackage[margin=0.8in]{geometry} % Margins
 \usepackage{hyperref} % Hyperlinks support
+\usepackage{ifthen}
 
+% Supress page number
+\pagenumbering{gobble}
 % Title
 \author{Tex Titterton}
 \renewcommand{\maketitle}{
@@ -19,40 +22,51 @@
     \end{center}
   }
 
-% Hyperlinks
-  \hypersetup{
-    pdfpagemode=Fullscreen,
-  }
 
 % Custom sections and formatting
 \titleformat{\section}{\huge\bfseries}{}{0em}{}[{\titlerule[0.75pt]}]
 \titleformat{\subsection}{\bfseries\Large}{}{0em}{}
 \titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{}
 
+\newenvironment{cSubsection}[4]{
+  {\bf #1} \hfill {\em #2}
+  \ifthenelse{\equal{#3}{}}{}{
+    \\
+    {#3} \hfill {\em #4}
+  }
+  \begin{itemize}[leftmargin=*]
+    \itemsep -0.5em \vspace{-0.5em}
+  }{
+  \end{itemize}
+  }
+
+
 \begin{document}
 
 \maketitle
 
 \section{Experience}
-\subsection{Thunderhoof Ranch -- TR}
-    \textbf{November 2018 - Present}
-    \textit{Wrangler}
-\begin{itemize}
+\begin{cSubsection}
+    {Thunderhoof Ranch -- TR}
+    {Bozeman, MT}
+    {Wrangler}
+    {November 2018 - Present}
     \item Led cattle drives and ensured the safe transport of herds to grazing areas.
     \item Assisted in branding and vaccinating cattle, maintaining accurate records.
     \item Conducted routine maintenance of equipment and facilities for optimal functionality.
     \item Worked closely with ranch owners to develop and implement sustainable land management strategies.
-\end{itemize}
+\end{cSubsection}
 
-\subsection{Silver Sprus Ranch - SS}
-    \textbf{August 2010 - September 2018}
-    \textit{Range Rider}
-\begin{itemize}
+\begin{cSubsection}
+    {Silver Sprus Ranch - SS}
+    {Missoula, MT}
+    {Range Rider}
+    {August 2010 - September 2018}
     \item Managed a team of wranglers and coordinated daily trail rides for guests.
     \item Ensured the well-being and safety of both riders and horses during excursions.
     \item Provided guests with a memorable and enjoyable Western experience through entertaining storytelling and cowboy demonstrations.
     \item Assisted in organizing special events, including rodeos and chuckwagon dinners.
-\end{itemize}
+\end{cSubsection}
 
 \section{Skills}
 \subsubsection
