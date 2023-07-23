@@ -1,0 +1,108 @@
+\documentclass[a4paper]{article}
+
+\usepackage{titlesec} % Define title section
+\usepackage{titling} % Format title
+\usepackage[inline]{enumitem} % Inline lists
+\usepackage{parskip} % Remove paragraph identation
+\usepackage[margin=0.8in]{geometry} % Margins
+\usepackage{hyperref} % Hyperlinks support
+
+% Title
+\author{Tex Titterton}
+\renewcommand{\maketitle}{
+  \begin{center}
+  {\huge\bfseries\theauthor} \\ % Renders name
+    (406)736-9419 |
+    tex@titterton.com |
+    \href{https://github.com/titterton}{titterton} |
+    \href{https://linkedin.com/txtitterton}{txtitterton}
+    \end{center}
+  }
+
+% Hyperlinks
+  \hypersetup{
+    pdfpagemode=Fullscreen,
+  }
+
+% Custom sections and formatting
+\titleformat{\section}{\huge\bfseries}{}{0em}{}[{\titlerule[0.75pt]}]
+\titleformat{\subsection}{\bfseries\Large}{}{0em}{}
+\titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{}
+
+\begin{document}
+
+\maketitle
+
+\section{Experience}
+\subsection{Thunderhoof Ranch -- TR}
+    \textbf{November 2018 - Present}
+    \textit{Wrangler}
+\begin{itemize}
+    \item Led cattle drives and ensured the safe transport of herds to grazing areas.
+    \item Assisted in branding and vaccinating cattle, maintaining accurate records.
+    \item Conducted routine maintenance of equipment and facilities for optimal functionality.
+    \item Worked closely with ranch owners to develop and implement sustainable land management strategies.
+\end{itemize}
+
+\subsection{Silver Sprus Ranch - SS}
+    \textbf{August 2010 - September 2018}
+    \textit{Range Rider}
+\begin{itemize}
+    \item Managed a team of wranglers and coordinated daily trail rides for guests.
+    \item Ensured the well-being and safety of both riders and horses during excursions.
+    \item Provided guests with a memorable and enjoyable Western experience through entertaining storytelling and cowboy demonstrations.
+    \item Assisted in organizing special events, including rodeos and chuckwagon dinners.
+\end{itemize}
+
+\section{Skills}
+\subsubsection
+  {Wrangling}
+\begin{itemize*}
+  \item Roping
+  \item Herding
+  \item Trail
+  \item Guilding
+  \item Wilderness
+  \item Fence Repair
+\end{itemize*}
+
+\subsubsection
+  {Livestock}
+\begin{itemize*}
+  \item Saddles
+  \item Branding
+  \item Vaccination
+  \item Cattle
+  \item Ranching
+\end{itemize*}
+
+\section{Education}
+\subsection{Montana State University - MSU}
+    \textbf{May 2000 - August 2004}
+    \textit{Agronomy}
+\begin{itemize}
+    \item \textbf{Coursework:} Applied agronomy principles to optimize crop yields on a large-scale ranch, implementing soil testing and nutrient management strategies tailored to the specific needs of the land and crops grown.
+    \item \textbf{Awards:} Utilized precision agriculture techniques, such as GPS-guided machinery and variable rate application, to maximize resource efficiency and minimize environmental impact while ensuring the ranch's agricultural productivity.
+\end{itemize}
+
+
+\section{Certificates}
+\subsubsection
+  {2015}
+  HERD - Health and Ethical Ranching Development
+  \vspace{-1.5em}
+
+\subsubsection
+  {2007}
+  SEED - Sustainable Ecological Ethics in Diversified Agriculture
+
+\section{Languages}
+\subsubsection
+{English}
+C2 - Native
+
+\subsubsection
+{Italian}
+C1 - Advanced
+
+\end{document}
