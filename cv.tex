@@ -9,6 +9,8 @@
 \usepackage[margin=0.8in]{geometry} % Margins
 \usepackage{hyperref} % Hyperlinks support
 \usepackage{ifthen} % Conditional commands
+\usepackage{fontspec}
+\usepackage{fontawesome5}
 \usepackage{changepage}
 \usepackage{roboto}
 \usepackage[default,opentype]{sourcesanspro}
@@ -22,10 +24,10 @@
 \renewcommand{\maketitle}{
   \begin{center}
     {\sourcesanspro\fontsize{32pt}{1em}\scshape\theauthor} \\ % Renders name
-    (406)736-9419 |
-    tex@titterton.com |
-    \href{https://github.com/titterton}{titterton} |
-    \href{https://linkedin.com/txtitterton}{txtitterton}
+    {\faMobile} (406)736-9419 |
+    \href{mailto:tex@titterton.com}{{\faEnvelope} tex@titterton.com} |
+    \href{https://github.com/titterton}{{\faGithub} titterton} |
+    \href{https://linkedin.com/in/txtitterton}{{\faLinkedin} txtitterton}
     \end{center}
   }
 
