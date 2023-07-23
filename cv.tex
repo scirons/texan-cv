@@ -6,10 +6,12 @@
 \usepackage{parskip} % Remove paragraph identation
 \usepackage[margin=0.8in]{geometry} % Margins
 \usepackage{hyperref} % Hyperlinks support
-\usepackage{ifthen}
+\usepackage{ifthen} % Conditional commands
+\usepackage{changepage}
 
 % Supress page number
 \pagenumbering{gobble}
+
 % Title
 \author{Tex Titterton}
 \renewcommand{\maketitle}{
@@ -28,76 +30,86 @@
 \titleformat{\subsection}{\bfseries\Large}{}{0em}{}
 \titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{}
 
-\newenvironment{cSubsection}[4]{
+% Define main subsections
+\newenvironment{mSubsection}[4]{
   {\bf #1} \hfill {\em #2}
   \ifthenelse{\equal{#3}{}}{}{
     \\
     {#3} \hfill {\em #4}
   }
   \begin{itemize}[leftmargin=*]
-    \itemsep -0.5em \vspace{-0.5em}
-  }{
+    \itemsep -0.5em \vspace{-0.5em}}
+  {
   \end{itemize}
   }
 
+% Define skills
+\newenvironment{sSubsection}[1]{
+  {\bf #1}
+  \begin{itemize*}[]
+    \itemsep -0.5em \vspace{-0.5em}}
+  {\end{itemize*}
+  \vspace{-0.5em}
+  }
+
+% Define certs
 
 \begin{document}
 
 \maketitle
 
 \section{Experience}
-\begin{cSubsection}
+\begin{mSubsection}
     {Thunderhoof Ranch -- TR}
     {Bozeman, MT}
     {Wrangler}
-    {November 2018 - Present}
+    {Nov. 2018 - Present}
     \item Led cattle drives and ensured the safe transport of herds to grazing areas.
     \item Assisted in branding and vaccinating cattle, maintaining accurate records.
     \item Conducted routine maintenance of equipment and facilities for optimal functionality.
     \item Worked closely with ranch owners to develop and implement sustainable land management strategies.
-\end{cSubsection}
+\end{mSubsection}
 
-\begin{cSubsection}
+\begin{mSubsection}
     {Silver Sprus Ranch - SS}
     {Missoula, MT}
     {Range Rider}
-    {August 2010 - September 2018}
+    {Aug. 2010 - Sep. 2018}
     \item Managed a team of wranglers and coordinated daily trail rides for guests.
     \item Ensured the well-being and safety of both riders and horses during excursions.
     \item Provided guests with a memorable and enjoyable Western experience through entertaining storytelling and cowboy demonstrations.
     \item Assisted in organizing special events, including rodeos and chuckwagon dinners.
-\end{cSubsection}
+\end{mSubsection}
 
 \section{Skills}
-\subsubsection
+\begin{sSubsection}
   {Wrangling}
-\begin{itemize*}
   \item Roping
   \item Herding
   \item Trail
   \item Guilding
   \item Wilderness
   \item Fence Repair
-\end{itemize*}
+\end{sSubsection}
 
-\subsubsection
+\begin{sSubsection}
   {Livestock}
-\begin{itemize*}
   \item Saddles
   \item Branding
   \item Vaccination
   \item Cattle
   \item Ranching
-\end{itemize*}
+\end{sSubsection}
 
 \section{Education}
-\subsection{Montana State University - MSU}
-    \textbf{May 2000 - August 2004}
-    \textit{Agronomy}
-\begin{itemize}
+\begin{mSubsection}
+    {Montana State University}
+    {Bozeman, MT}
+    {Agronomy}
+    {May 2000 - August 2004}
     \item \textbf{Coursework:} Applied agronomy principles to optimize crop yields on a large-scale ranch, implementing soil testing and nutrient management strategies tailored to the specific needs of the land and crops grown.
     \item \textbf{Awards:} Utilized precision agriculture techniques, such as GPS-guided machinery and variable rate application, to maximize resource efficiency and minimize environmental impact while ensuring the ranch's agricultural productivity.
-\end{itemize}
+\end{mSubsection}
 
 
 \section{Certificates}
@@ -114,6 +126,7 @@
 \subsubsection
 {English}
 C2 - Native
+\vspace{-1.5em}
 
 \subsubsection
 {Italian}
